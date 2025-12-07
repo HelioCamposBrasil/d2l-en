@@ -80,3 +80,9 @@ This section provides detailed feedback on the content of the "Linear Neural Net
 *   **Overall:** A clear and practical guide to creating synthetic data and using data loaders.
 *   **Suggestions:**
     1.  **Clarify the Two `get_dataloader` Implementations:** The section presents a from-scratch and a framework-based implementation of `get_dataloader`. This could be made clearer with more distinct subsection titles to guide the reader.
+
+## Section: `linear-regression-scratch`
+*   **Overall:** An essential and well-executed section that translates theory into a working implementation.
+*   **Suggestions:**
+    1.  **Conflict with "From Scratch" Goal:** The use of the pre-defined `Trainer` class hides the core training loop, which is the most important part of a "from scratch" implementation. For a more transparent and pedagogical experience, the main `for epoch in ...` loop should be written out explicitly in this section, rather than being abstracted away in the `Trainer` class.
+    2.  **Reinforces `oo-design` Placement Issue:** The reliance on the `oo-design` framework in this "from scratch" section further highlights the awkwardness of the current chapter order. The learning flow would be more natural if this section came *before* the `oo-design` section.
