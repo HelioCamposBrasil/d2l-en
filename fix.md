@@ -86,3 +86,9 @@ This section provides detailed feedback on the content of the "Linear Neural Net
 *   **Suggestions:**
     1.  **Conflict with "From Scratch" Goal:** The use of the pre-defined `Trainer` class hides the core training loop, which is the most important part of a "from scratch" implementation. For a more transparent and pedagogical experience, the main `for epoch in ...` loop should be written out explicitly in this section, rather than being abstracted away in the `Trainer` class.
     2.  **Reinforces `oo-design` Placement Issue:** The reliance on the `oo-design` framework in this "from scratch" section further highlights the awkwardness of the current chapter order. The learning flow would be more natural if this section came *before* the `oo-design` section.
+
+## Section: `linear-regression-concise`
+*   **Overall:** An excellent demonstration of how to use high-level APIs to build models efficiently.
+*   **Suggestions:**
+    1.  **Demystify Lazy Initialization:** The text mentions that some frameworks can automatically infer the input shape of a layer, but defers the explanation. A brief, intuitive explanation (e.g., "the framework waits until the first batch of data is passed through the model to determine the input size and then creates the weight matrix accordingly") would be very helpful here.
+    2.  **Explain Framework-Specific Inconsistencies:** Briefly explain *why* some framework APIs differ. For example, why does PyTorch's `MSELoss` average by default, while MXNet's `L2Loss` requires an explicit `.mean()` call? A sentence about different design philosophies would add valuable context.
